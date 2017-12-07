@@ -9,14 +9,14 @@ var express         = require("express"),
         Campground  = require("./models/campground"),
         seedDB      = require("./seeds"),
         Comment     = require("./models/comment"),
-        User        = require("./models/user")
+        User        = require("./models/user");
         
         
         
 //requring routes
 var commentRoutes    = require("./routes/comments"),
     campgroundRoutes = require("./routes/campgrounds"),
-    indexRoutes      = require("./routes/index")
+    indexRoutes      = require("./routes/index");
         
 //seedDB(); //seed the DB
 //mongoose.connect("mongodb://localhost/yelp_camp_v12",{useMongoClient: true})
@@ -46,7 +46,7 @@ app.use(function(req, res, next){
     //we're storing currentUser on res.locals, it's available to us in all of the views rendered during any request.
     res.locals.currentUser = req.user;
     res.locals.error = req.flash("error");
-    res.locals.success = req.flash("success")
+    res.locals.success = req.flash("success");
     next();
 });
 
